@@ -1,0 +1,8 @@
+<h2>Comment Details</h2>
+
+<p><strong>Name:</strong> <%= @comment.commenter %></p>
+<p><strong>Comment:</strong> <%= @comment.body %></p>
+
+
+<%= link_to "Edit Comment", edit_article_comment_path, class: "btn" %>
+<%= link_to "Back to Article", article_path(@article), class: "btn" %>

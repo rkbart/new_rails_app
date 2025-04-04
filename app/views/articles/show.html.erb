@@ -1,0 +1,26 @@
+<div style="display: flex; 
+            flex-direction: column; 
+            align-items: center">
+  <h1><%= @article.title %></h1>
+  <p style="text-align: center; 
+            margin-top: 5px; 
+            width: 50%;">
+    <%= @article.body %>
+  </p>
+
+  <div style="text-align: center;">
+    <%= link_to "Edit Article", edit_article_path(@article), class: "btn" %>
+    <%= link_to "Delete Article", article_path(@article), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    }, class: "btn" %>
+    <%= link_to "Back to Home", articles_path, class: "btn"%>
+  </div>
+
+  <h2>Comments (<%= @article.comments.count %>)</h2>
+
+  <%= render @article.comments %>
+
+  <h2 class="add-comment-title">Add a comment:</h2>
+  <%= render "comments/form" %>
+</div>
