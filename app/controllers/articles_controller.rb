@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @comment_galing_sa_articles = @article.comments.build
+    @comment = @article.comments.build
   end
 
   def new
@@ -37,6 +37,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
+    flash.alert = "Article deleted successfully."
     redirect_to root_path, status: :see_other
   end
 

@@ -1,16 +1,16 @@
-<%= form_with model: [ @article, @comment_galing_sa_articles ] do |form| %>
+<%= form_with model: [ @article, @comment ] do |form| %>
   <p style="font-weight: bold;">
     <%= form.label "Name:" %><br>
     <%= form.text_field :commenter %>
   </p>
-  <% @comment_galing_sa_articles.errors.full_messages_for(:commenter).each do |message| %>
+  <% @comment.errors.full_messages_for(:commenter).each do |message| %>
       <div style="color: red; font-style: italic; font-size: 12px"><%= message %></div>
     <% end %>
   <p style="font-weight: bold;">
     <%= form.label "Comment:"%><br>
     <%= form.text_area :body, style: "resize: none" %>
   </p>
-  <% @comment_galing_sa_articles.errors.full_messages_for(:body).each do |message| %>
+  <% @comment.errors.full_messages_for(:body).each do |message| %>
       <div style="color: red; font-style: italic; font-size: 12px"><%= message %></div>
     <% end %>
   <p>

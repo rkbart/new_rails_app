@@ -2,13 +2,13 @@ class CommentsController < ApplicationController
   before_action :set_article
   before_action :set_comment, only: %i[show edit update destroy]
 
-  def index
-    @comments = @article.comments
-  end
+  # def index
+  #   @comments = @article.comments
+  # end
 
   def create
     @comment = @article.comments.build(comment_params)
-    
+
     if @comment.save
       redirect_to @article, notice: "Comment was successfully created."
     else
@@ -25,10 +25,10 @@ class CommentsController < ApplicationController
   def update
     if @comment.update(comment_params)
       redirect_to @article, notice: "Comment updated successfully."
-    else  
-      flash.alert = 'Unable to update comment.'  
+    else
+      flash.alert = "Unable to update comment."
       render :edit, status: :unprocessable_entity
-    end  
+    end
   end
 
   def destroy
