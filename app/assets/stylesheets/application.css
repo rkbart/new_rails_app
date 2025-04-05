@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f7f4d8;
     color: #333;
     box-sizing: border-box;
     }
@@ -26,7 +26,7 @@ body {
     
     /* Links */
     a {
-    color: #007bff;
+    color: #ff0000;
     text-decoration: none;
     }
     

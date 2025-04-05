@@ -2,10 +2,6 @@ class CommentsController < ApplicationController
   before_action :set_article
   before_action :set_comment, only: %i[show edit update destroy]
 
-  # def index
-  #   @comments = @article.comments
-  # end
-
   def create
     @comment = @article.comments.build(comment_params)
 
